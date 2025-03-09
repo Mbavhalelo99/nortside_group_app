@@ -8,7 +8,6 @@ class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _DashboardScreenState createState() => _DashboardScreenState();
 }
 
@@ -31,7 +30,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("NortSide Group Pty Ltd"),
+        title: const Text("Business Dashboard"),
         actions: [
           IconButton(
             icon: Icon(
@@ -55,8 +54,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     height: 200,
                     child: LineChart(
                       LineChartData(
-                        gridData: const FlGridData(show: false),
-                        titlesData: const FlTitlesData(show: false),
+                        gridData: FlGridData(show: false),
+                        titlesData: FlTitlesData(show: false),
                         borderData: FlBorderData(show: false),
                         lineBarsData: [
                           LineChartBarData(
