@@ -54,8 +54,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     height: 200,
                     child: LineChart(
                       LineChartData(
-                        gridData: FlGridData(show: false),
-                        titlesData: FlTitlesData(show: false),
+                        gridData: const FlGridData(show: false),
+                        titlesData: const FlTitlesData(show: false),
                         borderData: FlBorderData(show: false),
                         lineBarsData: [
                           LineChartBarData(

@@ -1,11 +1,10 @@
 // lib/screens/splash_screen.dart
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dashboard_screen.dart';
-import 'package:local_auth/local_auth.dart'
-    show AuthenticationOptions, LocalAuthentication;
+import 'package:local_auth/local_auth.dart' show LocalAuthentication;
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,39 +20,14 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Display splash for 1.5 seconds, then attempt biometric auth
-    Timer(const Duration(milliseconds: 1500), () {
-      _authenticate();
+    Timer(const Duration(milliseconds: 00), () {
+      // Dummy feature: directly navigate to DashboardScreen after splash
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const DashboardScreen()),
+      );
+      // _authenticate(); // Commented out for now
     });
-  }
-
-  Future<void> _authenticate() async {
-    bool authenticated = false;
-    try {
-      // Request face recognition or any available biometric method
-      authenticated = await auth.authenticate(
-        localizedReason: 'Please authenticate to continue',
-        options: const AuthenticationOptions(
-          biometricOnly: true,
-          stickyAuth: true,
-        ),
-      );
-    } catch (e) {
-      debugPrint('Error during biometric authentication: $e');
-    }
-
-    // Navigate to DashboardScreen regardless (or handle failure as needed)
-    if (authenticated) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const DashboardScreen()),
-      );
-    } else {
-      // In a production app, you might show an error and re-prompt.
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const DashboardScreen()),
-      );
-    }
   }
 
   @override
