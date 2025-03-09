@@ -8,6 +8,7 @@ class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _DashboardScreenState createState() => _DashboardScreenState();
 }
 
@@ -54,8 +55,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     height: 200,
                     child: LineChart(
                       LineChartData(
-                        gridData: FlGridData(show: false),
-                        titlesData: FlTitlesData(show: false),
+                        gridData: const FlGridData(show: false),
+                        titlesData: const FlTitlesData(show: false),
                         borderData: FlBorderData(show: false),
                         lineBarsData: [
                           LineChartBarData(

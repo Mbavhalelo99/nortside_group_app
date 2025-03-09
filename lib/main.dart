@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/dashboard_screen.dart';
 
 void main() {
-  runApp(BusinessDashboardApp());
+  runApp(const BusinessDashboardApp());
 }
 
 class BusinessDashboardApp extends StatelessWidget {
@@ -10,7 +10,7 @@ class BusinessDashboardApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DashboardScreen(),
     );
